@@ -1,0 +1,51 @@
+<div class="container py-2 flex-column">
+  <div class="d-flex justify-content-around cardContainer gap-3">
+    <div class="category">
+      <div class="inputs d-flex">
+        <button (click)="reset()" class="btn btn-danger">Rest category</button>
+        <div class="beautyCon">
+          <input
+            type="radio"
+            name="beauty"
+            id="beauty"
+            value="beauty"
+            [(ngModel)]="category"
+            (change)="loadCategory()"
+          />
+          <label for="beauty">beauty</label>
+        </div>
+
+        <div class="fragCon">
+          <input
+            type="radio"
+            name="fragnance"
+            id="fragnance"
+            value="fragrances"
+            [(ngModel)]="category"
+            (change)="loadCategory()"
+          />
+          <label for="fragnance">fragnances</label>
+        </div>
+
+        <div class="furnitCon">
+          <input
+            type="radio"
+            name="furniture"
+            id="furniture"
+            value="furniture"
+            [(ngModel)]="category"
+            (change)="loadCategory()"
+          />
+          <label for="furniture">furniture</label>
+        </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 cards">
+      @for (singleProduct of products; track singleProduct.id) {
+      <app-card [product]="singleProduct" />
+      } @empty {
+      <p>No items</p>
+      }
+    </div>
+  </div>
+</div>

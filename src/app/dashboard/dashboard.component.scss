@@ -1,0 +1,19 @@
+.cardContainer {
+  .category {
+    max-width: 250px;
+    width: 250px;
+    height: 350px;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 10px;
+
+    .inputs {
+      flex-direction: column;
+      text-transform: capitalize;
+    }
+  }
+
+  .cards {
+    width: 75%;
+  }
+}
